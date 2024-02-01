@@ -3723,14 +3723,22 @@ function exportexcel(){
         var valorAleatorio = generarValorAleatorio();
         var fechaFormateada = dia + "/" + mes + "/" + año + " " + hora + ":" + minutos + ":" + segundos;
         var idrad = dia + "" + mes + "" + año + "" + hora + "" + minutos + "" + segundos + "" + valorAleatorio;
-        console.log(idrad);
+        //console.log(idrad);
         alert("El trámite fue radicado con éxito y el código de radicado es: <b>" + idrad + "</b> , Los datos del trámite fueron enviados al correo electrónico registrado.");
         cerrarModal();
     }, 3000); // 3000 milisegundos equivalen a 3 segundos
   //cerrarModal() 
   }
   else{
-    alert("xxx");
+    var datauser = validacionusuarios();
+    var ceduser = datauser[0][8];
+    var enlace = document.createElement('a');
+    enlace.href = 'http://127.0.0.1/radicacionweb/visor/pdfs/certificados_catastrales/certificado_catastral_80124249.pdf';
+    enlace.download = 'certificado_catastral_80124249.pdf';
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+    cerrarModal();
   }
 }
 
