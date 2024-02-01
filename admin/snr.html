@@ -1,0 +1,587 @@
+<!--
+=========================================================
+* Paper Dashboard 2 - v2.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+
+Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    IDEAMCO
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <style>
+  .main-panel {
+    width: 100%;
+}  
+  </style>
+    
+  <script src="../js/index.js"></script>
+  <script src="../js/md5.inc.js"></script>
+  <script src="../sql/jsSearch.js"></script>
+  <script src="../admin/admin.js"></script>
+   
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    
+    <div class="main-panel">
+      <!-- Navbar -->
+     
+      <!-- End Navbar -->
+    <div class="content">
+          
+   
+    <h4 class="card-title">LA VIRGINIA</h4>
+            <div class="card demo-icons">
+              
+              <div class="card-body all-icons">
+                <div>
+                  <section>
+                    <ul>
+                      <li>
+                        <i class="fa fa-database fa-2x"></i>
+                        <h8>Total Registros Catastro:  7472</h8>
+                      </li>
+                      <li>
+                        <i class="fa fa-database fa-2x"></i>
+                        <h8>Total Registros SNR:  8665</h8>
+                      </li>
+                        
+                      <!-- list of icons here with the proper class-->
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">4275<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Código Catastral
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-success"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">1983<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Matrícula Inmobiliaria (Diferente Código Catastral)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">109<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Dirección (Diferente Código y Matrícula)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Coincidencia Catastro</h5>
+              </div>
+              <div class="card-body ">
+                <canvas id="chartEmail3"></canvas>
+              </div>
+              <div class="card-footer ">
+                <div class="legend">
+                  <i class="fa fa-circle text-danger"></i> Código
+                  <i class="fa fa-circle text-success"></i> Matrícula
+                  <i class="fa fa-circle text-primary"></i> Dirección
+                </div>
+                <hr>
+                <div class="stats">
+                  <i></i> Gráfico Porcentual
+                </div>
+              </div>    
+            </div>
+        </div>
+            <div class="card-body " hidden="hidden">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+            
+            <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Coincidencia SNR</h5>
+              </div>
+              <div class="card-body ">
+                <canvas id="chartEmail4" ></canvas>
+              </div>
+              <div class="card-footer ">
+                <div class="legend">
+                  <i class="fa fa-circle text-danger"></i> Código
+                  <i class="fa fa-circle text-success"></i> Matrícula
+                  <i class="fa fa-circle text-primary"></i> Dirección
+                </div>
+                <hr>
+                <div class="stats2">
+                  <i></i> Gráfico Porcentual
+                </div>
+              </div>    
+            </div>
+        </div>
+            <div class="card-body " hidden="hidden">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+            </div>
+               
+        
+        
+        
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+         
+    <h4 class="card-title">DOSQUEBRADAS</h4>
+            <div class="card demo-icons">
+              
+              <div class="card-body all-icons">
+                <div>
+                  <section>
+                    <ul>
+                      <li>
+                        <i class="fa fa-database fa-2x"></i>
+                        <h8>Total Registros Catastro: 71083</h8>
+                      </li>
+                      <li>
+                        <i class="fa fa-database fa-2x"></i>
+                        <h8>Total Registros SNR:   87875</h8>
+                      </li>
+                        
+                      <!-- list of icons here with the proper class-->
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">32684<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Código Catastral
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-success"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">277<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Matrícula Inmobiliaria (Diferente Código Catastral)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">0<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Dirección (Diferente Código y Matrícula)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Coincidencia Catastro</h5>
+              </div>
+              <div class="card-body ">
+                <canvas id="chartEmail"></canvas>
+              </div>
+              <div class="card-footer ">
+                <div class="legend">
+                  <i class="fa fa-circle text-danger"></i> Código
+                  <i class="fa fa-circle text-success"></i> Matrícula
+                  <i class="fa fa-circle text-primary"></i> Dirección
+                </div>
+                <hr>
+                <div class="stats">
+                  <i></i> Gráfico Porcentual
+                </div>
+              </div>    
+            </div>
+        </div>
+            <div class="card-body " hidden="hidden">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+            
+            <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Coincidencia SNR</h5>
+              </div>
+              <div class="card-body ">
+                <canvas id="chartEmail2" ></canvas>
+              </div>
+              <div class="card-footer ">
+                <div class="legend">
+                  <i class="fa fa-circle text-danger"></i> Código
+                  <i class="fa fa-circle text-success"></i> Matrícula
+                  <i class="fa fa-circle text-primary"></i> Dirección
+                </div>
+                <hr>
+                <div class="stats2">
+                  <i></i> Gráfico Porcentual
+                </div>
+              </div>    
+            </div>
+        </div>
+            <div class="card-body " hidden="hidden">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+            </div>
+          
+          
+          
+          
+          
+          
+          
+          
+         <h4 class="card-title">PEREIRA</h4>
+            <div class="card demo-icons">
+              
+              <div class="card-body all-icons">
+                <div>
+                  <section>
+                    <ul>
+                      <li>
+                        <i class="fa fa-database fa-2x"></i>
+                        <h8>Total Registros Catastro:  183805</h8>
+                      </li>
+                      <li>
+                        <i class="fa fa-database fa-2x"></i>
+                        <h8>Total Registros SNR:  170119</h8>
+                      </li>
+                        
+                      <!-- list of icons here with the proper class-->
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">53108<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Código Catastral
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-success"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">90870<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Matrícula Inmobiliaria (Diferente Código Catastral)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-bookmark-2 text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Número de Registros Coincidentes</p>
+                      <p class="card-title">1229<p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-refresh"></i>
+                  Cruce por Dirección (Diferente Código y Matrícula)
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
+        <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Coincidencia Catastro</h5>
+              </div>
+              <div class="card-body ">
+                <canvas id="chartEmail5"></canvas>
+              </div>
+              <div class="card-footer ">
+                <div class="legend">
+                  <i class="fa fa-circle text-danger"></i> Código
+                  <i class="fa fa-circle text-success"></i> Matrícula
+                  <i class="fa fa-circle text-primary"></i> Dirección
+                </div>
+                <hr>
+                <div class="stats">
+                  <i></i> Gráfico Porcentual
+                </div>
+              </div>    
+            </div>
+        </div>
+            <div class="card-body " hidden="hidden">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+            
+            <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Coincidencia SNR</h5>
+              </div>
+              <div class="card-body ">
+                <canvas id="chartEmail6" ></canvas>
+              </div>
+              <div class="card-footer ">
+                <div class="legend">
+                  <i class="fa fa-circle text-danger"></i> Código
+                  <i class="fa fa-circle text-success"></i> Matrícula
+                  <i class="fa fa-circle text-primary"></i> Dirección
+                </div>
+                <hr>
+                <div class="stats2">
+                  <i></i> Gráfico Porcentual
+                </div>
+              </div>    
+            </div>
+        </div>
+            <div class="card-body " hidden="hidden">
+                <canvas id=chartHours width="400" height="100"></canvas>
+              </div>
+            </div>
+               
+         
+          
+          
+         
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+              
+  
+          
+    
+    
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXhkFNQnLZmb9yH-tg6keYtNG45Wxhasw&signed_in=true&callback=initialize"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo_snr.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+      demo.initChartsPages();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;   
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    display:flex;
+}
+
+body{
+    margin:0; 
+    touch-action: none;
+}
+
+.parent_li {
+    list-style: none;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+@media handheld, only screen and (min-width: 767px) {
+    .tree {
+        position: fixed;
+        list-style:none;
+        overflow: auto;
+        bottom: 0em;	
+        background-color: rgba(255, 255, 255, 1);
+        width: auto;
+        max-height: 70%; 
+        z-index: 1;
+    }
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px; 
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
+
+#salir{
+    position: absolute;
+    top:0.5em;
+    right:11em;
+    width:3em;
+    height: auto;
+    cursor: pointer;
+}
+
+.glyphicon{
+    color: #232933;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.buttonActive{
+    color: #a8a4a4;
+  }
+  
+.buttonDisable{
+    color: #E76B62;
+}
+
+
+input[type=range] {
+    border-radius: 1.3px;
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    margin-left: 5%;
+    color: #e76b62;
+}
+  
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 1400px;
+    position:absolute;
+}
+
+.herramientasm1{
+	bottom:0em;
+	left:1em;
+}
+
+.herramientasm2{
+	bottom:0em;
+	left:1em;
+}
+
+.herramientasm1Horizontal{
+    left:1em;
+    top:0em;
+    bottom:auto;
+}
+
+
+
+.titulo{
+    position:absolute; font-size: 2.5em; color: #FFFFFF; text-shadow: 2px 2px black; z-index:1
+}
+
+.titulo1{
+    top:0em; 
+    left:5em;
+}
+
+.titulo2{
+    top:0em; 
+    right:8em;
+}
+
+.titulo2Horizontal{
+    left:5em;
+    top:52vh;
+}
+
+
+.ol-overviewmap{
+    position:absolute;
+    right:0.5em;
+    left: auto;
+    bottom:0.3em;
+    margin-bottom:5em;
+}
+.ol-attribution {
+    bottom: 3em;
+}
+
+.ol-zoom {
+    right: .5em;
+    left: auto;
+}
+
+.ol-zoom-extent{
+    right: .5em;
+    left: auto;
+}
+
+.ol-swipe, .ol-swipe button {
+    font-size: 1.2em;
+}
+
+.ol-zoom-extent button:before{
+    content: "Z ";
+}
+
+.ol-control button {
+    display: block;
+    margin: 1px;
+    padding: 0;
+    color: #fff;
+    font-size: 1.14em;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    height: 1.375em;
+    width: 1.375em;
+    line-height: .4em;
+    background-color: rgba(52,58,54,.9);
+    border: none;
+    border-radius: 2px;
+}
+
+
+ul{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-leyenda{
+    position: absolute;
+    top:8.5em;
+	right:0.5em;	
+}
+
+#barra{
+	position:absolute;
+    left: 5px;
+    bottom: 110px;
+}
+
+.modal-header .close {
+    margin-top: -16px;
+}
+
+#leyenda {
+    position: relative;
+    background-color: rgba(255,255,255,.4);
+    bottom: 0;
+    right: 0;
+}
+  
+.modal-dialog {
+    position: fixed;
+    width: 600px;
+    margin: 0;
+    padding: 10px;
+}
+
+.centerGroup{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-group>.btn:first-child {
+    margin-left: -10px;
+}
+
+
+/*#manual{
+    position: absolute;
+    top: 0.5em;
+    right: 3.5em;
+    width: 3em;
+    height: auto;
+    cursor: pointer;
+}*/
+
+#manual_drop {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#manual_img{
+    width: 3em;
+    height: auto;
+    cursor: pointer;
+}
+
+#manual_content{
+    right: 0;
+    left: auto;
+}
+
+#soporte{
+    position: absolute;
+    top: 0.5em;
+    right: 6.5em;
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+#soporte_drop {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#soporte_content{
+    right: 0;
+    left: auto;
+}
+#chat_soporte{
+    width: 3em;
+    height: auto;
+    cursor: pointer;
+}
+
+
+#chat{
+    /* top: 10%; */
+    text-align: center;
+    padding: 0!important;
+}
+#chat:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+#chat-dialog{
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    padding-top: 5%;
+    position: relative;
+}
+
+#close-chat{
+    margin-top: -10px;
+}
+
+@media (max-width: 640px) {
+    #chat-dialog{
+        width: 95%;
+    }
+    #chatframe{
+        width: 90%; 
+        height: 410px; 
+        margin-left: 18px;  
+        border: 0px;
+    }
+}
+@media (min-width: 640px) {
+    #chat-dialog{
+        width: 550px;
+    }
+    #chatframe{
+        width: 500px; 
+        height: 410px; 
+        margin-left: 18px;  
+        border: 0px;
+    }
+}

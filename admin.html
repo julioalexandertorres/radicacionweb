@@ -1,0 +1,282 @@
+<!--
+=========================================================
+* Paper Dashboard 2 - v2.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+
+Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Demo catastro::</title>
+  <link rel="icon" type="image/png" href="imagenes/icono_innoveste.ico" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="./assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+  <!--<link rel="stylesheet" href="style.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+  <!--<script src="jquery.table2excel.js"></script>-->  
+  <!--<script src="script.js"></script>-->
+  <script src="visor/src/app/index_evt/validaringreso.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="./js/md5.inc.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--<script src="http://code.highcharts.com/highcharts.js"></script>-->
+  <script src="src/highcharts/js/highcharts.js"></script>
+  <script src="src/highcharts/js/exporting.js"></script>
+  <!--<script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>-->
+  
+  <script src="visor/sql/jsSearch.js"></script>
+  <script src="visor/sql/js_sql.js"></script>
+  
+  <!-- <script src="admin/admin.js"></script> -->
+</head>
+
+<body class="" onload="aplicarFilterInf('usuarios')">
+  <div id="carga2" style="display:none"><img id="imgstaticsgif" src="./imagenes/statics.gif"></div>
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-xs-5">
+            <h2>Administración de<b> Usuarios</b></h2>
+          </div>
+          <div class="col-xs-7">
+            <!--<a href="#" class="btn btn-primary btn-sm" onclick="viewstatics()"><i
+              class="material-icons">&#xe26b;</i><span>Ver Estadisticas</span></a>-->
+            <!--<a href="#" class="btn btn-primary btn-sm" onclick="addcapageo()"><i
+                class="material-icons">&#xE147;</i><span>Agregar Capa Geográfica</span></a>-->
+            <!--<a href="#" class="btn btn-primary btn-sm" onclick="delcapageo()"><i
+                class="material-icons">&#xE147;</i><span>Eliminar Capa Geográfica</span></a>-->
+            
+            <!--<a href="#" class="btn btn-primary btn-sm" onclick="exportexcel()"><i
+                class="material-icons">&#xe2c4;</i><span>Exportar</span></a>-->  
+            <a href="#" class="btn btn-danger btn-sm" style="background-color: #FCB314; color: white;" onclick="vsalir()"><i
+                class="material-icons">&#xe888;</i><span>Salir</span></a>
+            <a href="#" class="btn btn-primary btn-sm" onclick="openmanualadmin()"><i
+                class="material-icons">&#xea19;</i><span>Manual de Usuario</span></a>
+            <a href="#" class="btn btn-primary btn-sm" onclick="createuser()"><i class="material-icons">&#xE147;</i><span>Agregar
+                Usuario</span></a>
+            <a href="#" class="btn btn-primary btn-sm" onclick="delcapageo()"><i class="material-icons">&#xE147;</i><span>Eliminar
+                Capa Geográfica</span></a>
+            <a href="#" class="btn btn-primary btn-sm" onclick="addcapageo()"><i class="material-icons">&#xE147;</i><span>Agregar
+                Capa Geográfica</span></a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span id="feature-count" class="text-muted" style="padding-left: 15px; color:white;"></span>
+      </div>
+      <table id="table" class="table table-striped table-hover" style="text-align: center;"></table>
+    </div>
+
+     <div id="divmanual" style="display: none;">
+        <button style="position: absolute; top: 1em; font-size: 18px; right: 1em; border: none; background-color: #323639; z-index: 2000; color: #F1F1F1" onclick="cerrarpdf()">X</button>	
+        <iframe name="marco" style="position: absolute; bottom: 0em; right: 0em; width: 30%; height: 100%; background-color: black; z-index: 1000;" id="marco"></iframe>
+     </div>
+
+
+    <div class="modal" id="panel_atr">
+      <!-- <div class="modal" id="panel_atr" tabindex="-1" role="dialog" aria-hidden="true" hidden="hidden"> -->
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="titulotabla"></h5>
+            <button type="button" class="close" onclick='ocultarpanelatributos();' data-dismiss="modal"
+              aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+
+          </div>
+          <div class="modal-body" style="padding:5px 10px 5px">
+            <table class="table table-striped table-hover table-sm" id="tblatt">
+            </table>
+            <div id="table-dynamic"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divform" id="divform">
+      <form class="form-register" id="contact-form">
+        <h2 class="form_titulo">CREAR USUARIO<a href="#" style="margin-left: 200px; margin-right: 0px; background-color: #FCB314;"
+            class="btn btn-danger btn-sm" onclick="divtoggle()">X</a></h2>
+        <div class="contenedor-inputs">
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario" class="input-100" required>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="input-100" required>
+          <input type="email" id="correo" name="correo" placeholder="Correo" class="input-100" required>
+          <label for="tipo" class="label-select">Seleccione el Role:</label>
+          <select id='tipo' name="tipo" class='list_form' onchange='selectchange()'>
+            <option value='' disabled selected>Seleccione...</option>
+            <option value='gerente'>Gerente</option>
+            <option value='lider'>Lider</option>
+            <option value='liderejecutor'>Lider ejecutor</option>   
+          </select>
+          <!--<label for="municipio" class="label-select">Seleccione el Municipio:</label>
+          <select id='municipio' name="municipio" class='list_form'>
+            <option value='apia'>Apía</option>
+            <option value='belen_de_umbria'>Belén de Umbría</option>
+            <option value='guatica'>Guática</option>
+            <option value='santuario'>Santuario</option>
+            <option value='pueblo_rico'>Pueblo Rico</option>
+            <option value='quinchia'>Quinchía</option>
+            <option value='marsella'>Marsella</option>
+            <option value='mistrato'>Mistrató</option>
+            <option value='la_celia'>La Celia</option>
+            <option value='santa_rosa'>Santa Rosa de Cabal</option>
+          </select>-->
+          <label for="estado" class="label-select">Seleccione el Estado:</label>
+          <select id='estado' name="estado" class='list_form'>
+            <option value='true'>Activo</option>
+            <option value='false'>Inactivo</option>
+          </select>
+          <label for="selectproyecto" class="label-select">Seleccione el Proyecto:</label>
+          <select id='selectproyecto' name="selectproyecto" class='list_form'>
+            <option value='' disabled selected>Seleccione...</option>
+          </select>
+          <input type="button" value="Registrar" class="btn btn-primary btn-lg btn-block" onclick="enviar()">
+        </div>
+      </form>
+    </div>
+
+    <div class="divform" id="divform2">
+      <form action="principal/adduser.php" method="post" class="form-register">
+        <h2 class="form_titulo">CREAR USUARIO<a href="#" style="margin-left: 200px; margin-right: 0px;"
+            class="btn btn-danger btn-sm" onclick="divtoggle()">X</a></h2>
+        <div class="contenedor-inputs">
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario" class="input-100" required>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="input-100" required>
+          <input type="email" id="correo" name="correo" placeholder="Correo" class="input-100" required>
+          <label for="tipo" class="label-select">Seleccione el Role:</label>
+          <select id='tipo' name="tipo" class='list_form'>
+            <option value='Gobernacion'>Gobernación</option>
+            <option value='Administrador'>Administrador</option>
+            <option value='Municipio'>Usuario Municipio</option>
+          </select>
+          <label for="municipio" class="label-select">Seleccione el Municipio:</label>
+          <select id='municipio' name="municipio" class='list_form'>
+            <option value='apia'>Apía</option>
+            <option value='belen_de_umbria'>Belén de Umbría</option>
+            <option value='guatica'>Guática</option>
+            <option value='santuario'>Santuario</option>
+            <option value='pueblo_rico'>Pueblo Rico</option>
+            <option value='quinchia'>Quinchía</option>
+            <option value='marsella'>Marsella</option>
+            <option value='mistrato'>Mistrató</option>
+            <option value='la_celia'>La Celia</option>
+            <option value='santa_rosa'>Santa Rosa de Cabal</option>
+          </select>
+          <label for="estado" class="label-select">Seleccione el Estado:</label>
+          <select id='estado' name="estado" class='list_form'>
+            <option value='true'>Activo</option>
+            <option value='false'>Inactivo</option>
+          </select>
+          <input type="submit" value="Registrar" class="btn btn-primary btn-lg btn-block">
+        </div>
+      </form>  
+    </div>
+
+    <div class="divstatics" id="divstaticsm">
+        <div class="form_titulo">MÓDULO ESTADISTICO<a href="#" style="margin-left: 200px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;" class="btn btn-danger btn-sm" onclick="divtoggle()">X</a></div>
+        <div class="contenedor-inputs">
+          
+    <select id="sel1" style="width: 50%; background-color: #379AD4; color: white; font-size: 14px; text-align: center; cursor: pointer;" name="sellist1" onchange="changegraf('graf1')">
+      <option value="ipup" selected>Ingresos por usuario (porcentaje)</option>
+      <option value="ipun">Ingresos por usuario (númerico)</option>
+      <option value="ceditp">Actividades en el módulo de edición (porcentaje)</option>
+      <option value="ceditn">Actividades en el módulo de edición (númerico)</option>
+      <option value="ccpmn">Cantidad de capas por temática (númerico)</option>
+      <option value="ccpmp">Cantidad de capas por temática (porcentaje)</option>
+      <option value="ccpmun">Cantidad de capas de información catastral por municipio (númerico)</option>
+      <option value="ccpmup">Cantidad de capas de información catastral por municipio (porcentaje)</option>
+      <option value="ccgrn">Cantidad de capas de información de gestion del riesgo por municipio (númerico)</option>
+      <option value="ccgrp">Cantidad de capas de información de gestion del riesgo por municipio (porcentaje)</option>
+      <option value="cccb5n">Cantidad de capas de cartografía básica (númerico)</option>
+      <option value="cccb5p">Cantidad de capas de cartografía básica (porcentaje)</option>
+    </select>
+
+    <select id="sel2" style="width: 50%; background-color: #379AD4; color: white; font-size: 14px; text-align: center; cursor: pointer;" name="sellist2" onchange="changegraf('graf2')">
+      <option value="ipup">Ingresos por usuario (porcentaje)</option>
+      <option value="ipun" selected>Ingresos por usuario (númerico)</option>
+      <option value="ceditp">Actividades en el módulo de edición (porcentaje)</option>
+      <option value="ceditn">Actividades en el módulo de edición (númerico)</option>
+      <option value="ccpmn">Cantidad de capas por temática (númerico)</option>
+      <option value="ccpmp">Cantidad de capas por temática (porcentaje)</option>
+      <option value="ccpmun">Cantidad de capas de información catastral por municipio (númerico)</option>
+      <option value="ccpmup">Cantidad de capas de información catastral por municipio (porcentaje)</option>
+      <option value="ccgrn">Cantidad de capas de información de gestion del riesgo por municipio (númerico)</option>
+      <option value="ccgrp">Cantidad de capas de información de gestion del riesgo por municipio (porcentaje)</option>
+      <option value="cccb5n">Cantidad de capas de cartografía básica (númerico)</option>
+      <option value="cccb5p">Cantidad de capas de cartografía básica (porcentaje)</option>
+    </select>
+
+
+          <div id="graf1" style="width: 50%; height: 30em; margin-top: 0em; float:left; background-color: white;"></div>
+          <div id="graf2" style="width: 50%; height: 30em; margin-top: 0em; float:left; background-color: white;"></div>
+          <div id="tablecontainer2" style="display: block; background-color: white; width: 100%; height: 32em; margin-top: 1em; font-size: 12px;">
+            <div id="toolbar" style="font-size: 10px;">
+              <div class="btn-group" role="group">
+                <!--<div class="btn-group">
+                  <button type="button" class="btn btn-primary btn-sm" style="background-color: #134375; border-color: #134375;" id="download-excel-btn2">Exportar Excel
+                  </button>
+                </div>-->
+              </div>
+              <span id="feature-count" class="text-muted" style="padding-left: 15px;"></span>
+            </div>
+            <table id="table2"></table>
+          </div>
+          <!--<div style="border-top:1px solid #CDCDCD;margin:10px;padding:0;clear:both;"></div>
+          <div id="tiempoReal" style="height: 400px; margin: 0 auto;"></div>-->
+        </div>
+    </div>
+
+    <!-- </div> -->
+
+    <link rel="stylesheet" href="visor/src/bootstrap-table/dist/bootstrap-table.min.css">
+    <script src="visor/src/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="visor/src/bootstrap-table/dist/locale/bootstrap-table-es-ES.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script> -->
+
+    <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/5.1.0/build/ext-all-debug.js"></script>
+
+
+    <script src="assets/vendor/jQuery-QueryBuilder/query-builder.standalone.min.js"></script>
+    <script src="assets/vendor/tableExport/tableExport.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/alasql/0.1/alasql.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+    <script src="admin/inf.js"></script>
+    <script src="admin/sendmail.js"></script>
+    <script src="admin/tablestatics.js"></script>
+
+    
+</body>
+
+</html>

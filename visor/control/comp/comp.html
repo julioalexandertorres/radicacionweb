@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="ol.control.Permalink add a premalink control to the map." />
+	<meta name="keywords" content="ol3, control, permalink, anchor" />
+    <link rel="stylesheet" href="src/ol7/ol.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/all.min.css" > <!--load all styles -->
+
+    <link rel="stylesheet" href="./control/swipecontrol.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" />
+	<!-- jQuery -->
+    <link rel="stylesheet" href="jquery/jquery-ui-1.11.2/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+   
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery-1.12.4.js"></script>
+    <script src="jquery/jquery-ui-1.11.2/jquery-ui.js"></script>
+    <script src="sql/jsSearch.js"></script>
+
+    <script src="ol3/ol-debug.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- controls -->
+
+	<script type="text/javascript" src="./control/swipecontrol.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script defer src="font-awesome/js/all.min.js"></script> <!--load all styles -->
+	    
+    <script type="text/javascript" src="layers.js"></script>
+</head>
+<body >
+
+    <nav class="navbar navbar-dark bg-dark">
+        <!--<h1 style="color: white; position: absolute; text-align: center;">COMPARACIÓN</h1>-->
+        <!--<h1 style="color: white; position: absolute; right: 6em;">RIESGO</h1>-->
+    </nav>
+	<!-- Map div -->
+	<div id="map"></div>   
+    
+    
+
+    <div id="herramientas" class='container'>
+        <div id="layertreem1" class="tree herramientasm1" style="left: 5em;"><img class="btn btn-success" style="border: 0px solid" ></div> 
+    </div> 
+    <div id="herramientasm2" class='container herramientasm2'>
+        <div id="layertreem2" class="tree" style="right: 5em;"><img class="btn btn-success" style="border: 0px solid" ></div> 
+    </div> 
+
+    
+
+  
+    
+    <!-- Modal -->
+    <div class="modal" id="leyenda" tabindex="-1" role="dialog" aria-labelledby="leyendaTitle" aria-hidden="true">
+        <div class="modal-dialog ui-draggable" role="document">
+        <div class="modal-content" style="max-height: 95vh;overflow: scroll;">
+            <div class="modal-header">
+                <h5 class="modal-title ui-draggable" id="leyendaTitle" >LEYENDA DE LAS CAPAS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered table-condensed" id="tblatt" style="visibility: visible; display: inline-table; height: auto; ">
+                    <tr>
+                        <td id="titlePOT2011" style="display: none;" class="centerGroup">COMPARACIÓN</td>
+                        <!--<td id="titlePOT2019" style="display: none;" class="centerGroup">CATASTRO</td>-->
+                    </tr>
+                    <tr>
+                        <td id="POT2011legend" style="display: none;" class="centerGroup"></td>
+                        <!--<td id="POT2019legend" style="display: none;" class="centerGroup"></td>-->
+                    </tr>
+                    <tr>
+                        <td id="descargaPOT2011" class="centerGroup" style="display: none;"></td>
+                        <!--<td id="descargaPOT2019" class="centerGroup" style="display: none;"></td>-->
+                    </tr>
+                </table>
+                <input type="text" id="inputinvisible" style="display: none; width: 100%;" >  
+                <p id="spanp" style="font-size:12px"></p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        if (!($('.modal.in').length)) {
+            $('.modal-dialog').css({
+                top: 0,
+                left: 0
+            });
+        }
+        $('#leyenda').modal({
+            backdrop: false,
+            show: false
+        });
+
+        $('.modal-dialog').draggable({
+            handle: ".modal-header"
+        });
+    </script>
+    
+    <script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="evt.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+        var ca = document.cookie.split('=');
+        };   
+	
+	</script>
+</body>
+</html>

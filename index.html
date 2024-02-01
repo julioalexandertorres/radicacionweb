@@ -1,0 +1,116 @@
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <title>Radicador web</title>
+        <link rel="stylesheet" href="css/login.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/4cf6deb8db.js" crossorigin="anonymous"></script> 
+</head>
+<body onload="onload()">
+    <!--<div class="modal fade" id="recovery" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            
+            <div class="modal-content">
+                <form class="form-horizontal" method="post" action="" onsubmit="resetpass()">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Recuperar Contraseña</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="control-group">
+                            <label class="control-label">Ingrese su correo electronico</label>
+                            <div class="controls">
+                                <input class="form-control" type="email" id="email" required="required">                          
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="save" onclick="resetpass()">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>-->
+    <h2 style="color:#FFFFFF">Bienvenido al Módulo de radicación web para trámites catastrales</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <!--<form action="#" autocomplete="new-password" >-->
+            <form method="post" action="validacion.html" class="login-form__form">
+                <h1>Inicio de sesión</h1>
+                <input type="text" id="u" name="u" placeholder="Usuario" required="required" autocomplete="new-password" />
+                <input type="password" id="p" name="p" placeholder="Contraseña" required="required" autocomplete="new-password" />
+                <i aria-hidden="true"  class="fa fa-eye" style="color:#9E9E9E; cursor: pointer;" onclick="mostrarContrasena()"></i>
+                <!--<a href="#">Olvidó su contraseña?</a>-->
+                <a href="#" class="olvidocontraseña" data-toggle="modal" data-target="#recovery">¿Olvidó su contraseña?</a> 
+                <!--<button>Ingresar</button>-->
+                <button type="submit" id="b" onclick="setCookie()"><div class="v-v-btn__content">INGRESAR</div></button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Ingrese su información personal</h1>
+                    <!--<p>Podra realizar sus trámites catastrales</p>-->
+                    <div class="input-group">
+                        <div class="select-container">
+                        <select>
+                            <option value="seleccionar" selected disabled>Seleccionar</option>
+                            <option value="cc">Cédula de ciudadania</option>
+                            <option value="ce">Cédula de extranjeria</option>
+                            <option value="pe">Permiso especial de permanencia</option>
+                            <option value="pp">Permiso por protección personal</option>
+                        </select>
+                        </div>
+                        <input type="text" placeholder="Número de identificación" autocomplete="new-password" />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Primer nombre" autocomplete="new-password" />
+                        <input type="text" placeholder="Segundo nombre" autocomplete="new-password" />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Primer apellido" autocomplete="new-password" />
+                        <input type="text" placeholder="Segundo apellido" autocomplete="new-password" />
+                    </div>
+                    <button class="ghost" id="enviarR">Enviar</button><br>
+                    <button class="ghost" id="signIn"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;LOGIN</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>No tienes cuenta?, registrate aquí</h1>
+                    <p>Ingresa tus datos personales para obtener una cuenta</p>
+                    <button class="ghost" id="signUp">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function mostrarContrasena(){
+            var tipo = document.getElementById("p");
+            if(tipo.type == "password"){
+                tipo.type = "text";
+            }else{
+                tipo.type = "password";
+            }
+        }
+    </script> 
+    <!--<footer>
+        <p>
+            Created with <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+            - Read how I created this and how you can join the challenge
+            <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+        </p>
+    </footer>-->
+    <script src="css/login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="principal/load.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/md5.inc.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+</body>
+</html>
