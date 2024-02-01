@@ -86,7 +86,8 @@ try{
               $('#mostrarMapa').modal("show");
             },
             "click .newT": function (e, value, row, index) {
-              $('#generartramite').modal("show");     
+              document.getElementById('labelTramite').innerHTML = row[0];
+              $('#generartramite').modal("show");    
           }
         }
     });
@@ -3724,6 +3725,12 @@ function exportexcel(){
         var fechaFormateada = dia + "/" + mes + "/" + año + " " + hora + ":" + minutos + ":" + segundos;
         var idrad = dia + "" + mes + "" + año + "" + hora + "" + minutos + "" + segundos + "" + valorAleatorio;
         //console.log(idrad);
+        var datauser = validacionusuarios();
+        var codigocatastral = document.getElementById('labelTramite').innerHTML;
+        //console.log(codigocatastral);
+        var t_idlcpredio = select_query("select t_id from valparaiso.lc_predio where numero_predial = '"+codigocatastral+"'");
+        //console.log(t_idlcpredio);
+        update_query("insert into mutacion_primera_clase (usuario, actividad, fecha, t_id, radicado, estado) values ('"+datauser[0][0]+"', 'radicación', '"+fechaFormateada+"', "+t_idlcpredio+", '"+idrad+"', 'pendiente')");
         alert("El trámite fue radicado con éxito y el código de radicado es: <b>" + idrad + "</b> , Los datos del trámite fueron enviados al correo electrónico registrado.");
         cerrarModal();
     }, 3000); // 3000 milisegundos equivalen a 3 segundos
