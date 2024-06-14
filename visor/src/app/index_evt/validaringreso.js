@@ -61,15 +61,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     function validacionusuarios() {   
       var ca = document.cookie.split('=');
+      //console.log(ca[0]);
+      //console.log(ca[1]);
         if (ca["0"] === "") {
             location.href = "../index.html?ig=error";
         } else {
             try {
-                var select = search("wfs:ValidateUser", ca[0], ca[1]);
-                //document.getElementById("carga").style.display = "none";
-                document.getElementById("labelusuario").innerHTML = select[0][2].split(" ", 1);
+                //var select = search("wfs:ValidateUser", ca[0], ca[1]);
+                var select = select_query("select * from usuario where usuario = '" + ca[0] + "' and contrasena = '" + ca[1] + "'");
+                document.getElementById("carga").style.display = "none";
+                document.getElementById("labelusuario").innerHTML = select[0][2].split(" ", 1);            
             } catch (err) {
-            }
+         }
+            //console.log(select);
             return(select);
         }
     }

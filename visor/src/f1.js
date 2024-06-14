@@ -3617,8 +3617,8 @@ function exportexcel(){
           var resultado3 = select_query("SELECT * FROM valparaiso.lc_terreno where t_id = '"+coluebaunit[0][0]+"'");
           lcterreno.push(resultado3);
         }*/
-
-        var sqlCompilada = select_query("SELECT lp.*, lt.* FROM valparaiso.lc_interesado li JOIN valparaiso.lc_derecho ld ON li.t_id = ld.interesado_lc_interesado JOIN valparaiso.lc_predio lp ON ld.unidad = lp.t_id JOIN valparaiso.col_uebaunit cu ON lp.t_id = cu.baunit JOIN valparaiso.lc_terreno lt ON cu.ue_lc_terreno = lt.t_id WHERE li.documento_identidad = '"+datauser[0][8]+"'");
+        console.log(datauser);
+        var sqlCompilada = select_query("SELECT lp.*, lt.* FROM valparaiso.lc_interesado li JOIN valparaiso.lc_derecho ld ON li.t_id = ld.interesado_lc_interesado JOIN valparaiso.lc_predio lp ON ld.unidad = lp.t_id JOIN valparaiso.col_uebaunit cu ON lp.t_id = cu.baunit JOIN valparaiso.lc_terreno lt ON cu.ue_lc_terreno = lt.t_id WHERE li.documento_identidad = '"+datauser[0][8]+"'"+"");
         //console.log(sqlCompilada);
         for(n =0; n < sqlCompilada.length; n++){
           datosTable.push([sqlCompilada[n][8], sqlCompilada[n][26], sqlCompilada[n][28], sqlCompilada[n][7], sqlCompilada[n][21]]);  
