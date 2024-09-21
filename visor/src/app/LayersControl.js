@@ -314,6 +314,7 @@ $(document).ready(function () {
 
     //u_terreno.setVisible(true);
     capasd[0].setVisible(true);
+    capasd[2].setVisible(true);
     //openstreetmap.setVisible(true);
     binglabels.setVisible(true);
 });

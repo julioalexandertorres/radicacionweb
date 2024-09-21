@@ -64,7 +64,7 @@
   <!--<div id="carga2"><img id="imgprocess" src="./image/procesando.gif"></div>-->
     <div id="map"> 
         <div id="popup" class="ol-popup"></div>            
-          <div id="barrabuscar" style="background-color: #FF6634; padding:0.6rem; display: none;">
+          <div id="barrabuscar" style="background-color: #01ACDE; padding:0.6rem; display: none;">
             <div class="input-group">		   
                   <div id="barras" onclick="lista()" class="dropbtn">
                       <a style="color: white; cursor: pointer;" class="fa fa-bars fa-2x"></a>
@@ -98,7 +98,7 @@
     <!--<div id="labelusuario" class="alert alert-primary" role="alert" style="position: absolute; top:0em; right: 0em;"></div>-->
     <button id="only2d" onclick="cerrar3d()" style="border-radius: 50%; position:absolute; top:2em; right: 12em; z-index: 1000; background-color: #FCB314; color: #FFFFFF; font-weight: bold; border-color: white; display: none;">2D</button>
     <div class="btn-group-vertical" id="grupoherramientas" style="position:absolute; top:4em; right: 0px; z-index: 100;" role="group" >
-      <button type="button" class="btn btn-default border" style="background-color: #FCB314;" aria-label="Left Align" title="Capas" onclick="menuLayers()" data-bs-toggle="tooltip">
+      <button type="button" class="btn btn-default border" style="background-color: #FCB314; display: none;" aria-label="Left Align" title="Capas" onclick="menuLayers()" data-bs-toggle="tooltip">
         <span class="fa fa-bars" style="color:#FFFFFF"></span>
       </button>
       <button type="button" class="btn btn-default border" onclick="medir()" style="background-color: #FCB314;" aria-label="Left Align" title="Medir" data-bs-toggle="tooltip">
@@ -120,10 +120,10 @@
     
     <div id="medidas" class="radio-toolbar" style="display: none; background-color: transparent;">
       <form style = "background-color:#036AB5; border: 0px;max-width: 300px;">
-          <input type="radio" id="radio1" name="gender" hidden="hidden" value="length" checked>
+          <input type="radio" id="radio1" name="gender" hidden="hidden" value="length" >
           <label for="radio1" style="margin-top:0.3em; padding-top:0.3em; padding:0.3em; padding-left:0.9em; padding-right:0.9em; margin-left:1em; border-radius:22.5px;">Distancia</label>
           <label style="margin-top:0.2em;">|</label>
-          <input type="radio" id="radio2" name="gender" hidden="hidden" value="area">
+          <input type="radio" id="radio2" name="gender" hidden="hidden" value="area" checked>
           <label for="radio2" style="margin-top:0.3em; padding-top:0.3em; padding:0.3em; padding-left:0.9em; padding-right:0.3em; margin-left:0em; margin-right:1.5em; border-radius:22.5px;">Área&nbsp&nbsp&nbsp</label>        
       </form>
     </div> 
@@ -131,7 +131,7 @@
     <main style="position: absolute; left: 0em; display: none;">
       <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;">
        
-        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center" style="background-color: #FF6634;">
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center" style="background-color: #01ACDE;">
           <li onclick="ocultarbarra()" style="cursor: pointer;">
             <a class="nav-link py-3 border-bottom" title="Buscar" data-bs-toggle="tooltip" data-bs-placement="right" role="button" aria-expanded="false" aria-controls="collapseExample">
               <span class="fa fa-search" style="font-size:20px; color: #FFFFFF;"></span>

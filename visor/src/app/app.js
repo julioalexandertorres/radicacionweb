@@ -316,7 +316,7 @@ map.on('singleclick', function (evt) {
                 //if (tamañopantalla == true) {
                     //putgif();
                 //} else {
-                    document.getElementById("carga2").style.display = "block";
+                    //document.getElementById("carga2").style.display = "block";
                 //}
             },
             success: function (data) {
@@ -368,11 +368,11 @@ map.on('singleclick', function (evt) {
                     select[5] = "<b>Área de Terreno: </b>";
                     select[6] = "<b>Condición del predio: </b>"; 
                     select[7] = "<b>Destinación económica: </b>";
-                    select[8] = "<b>Comienzo vida útil: </b>";
-                    select[9] = "<b>Baunit: </b>";
-                    select[10] = "<b>Fotografía: </b>";
-                    select[11] = "<b>Ver marcas: </b>";
-                    select[12] = "<b>Agregar marcas: </b>";
+                    //select[8] = "<b>Comienzo vida útil: </b>";
+                    //select[9] = "<b>Baunit: </b>";
+                    //select[10] = "<b>Fotografía: </b>";
+                    //select[11] = "<b>Ver marcas: </b>";
+                    //select[12] = "<b>Agregar marcas: </b>";
                     
 
                     sel[0] = direccion;
@@ -383,15 +383,15 @@ map.on('singleclick', function (evt) {
                     sel[5] = parseInt(values.area_terreno) + " m2";
                     sel[6] = condicionpredio;
                     sel[7] = desteconomica;
-                    sel[8] = comienzovidautil;  
-                    sel[9] = baunit;         
-                    stv[10] = document.createElement("a");
-                    stv[10].setAttribute("onclick", "open_ficha("+ values.gid+")");
-                    ig[10] = document.createElement("img");
-                    ig[10].style = "cursor:pointer";
-                    ig[10].src = "./imagenes/carta.png";
-                    sel[11] = "<i class='fa fa-solid fa-folder-open fa-2x' style='color: #FCB314; cursor: pointer;' onclick='vermarca("+tidlcterreno+")'><i/>";
-                    sel[12] = "<i class='fa fa-solid fa-circle-plus fa-2x' style='color: #FCB314; cursor: pointer;' onclick='agregarmarca("+tidlcterreno+")'><i/>";
+                    //sel[8] = comienzovidautil;  
+                    //sel[9] = baunit;         
+                    //stv[10] = document.createElement("a");
+                    //stv[10].setAttribute("onclick", "open_ficha("+ values.gid+")");
+                    //ig[10] = document.createElement("img");
+                    //ig[10].style = "cursor:pointer";
+                    //ig[10].src = "./imagenes/carta.png";
+                    //sel[11] = "<i class='fa fa-solid fa-folder-open fa-2x' style='color: #FCB314; cursor: pointer;' onclick='vermarca("+tidlcterreno+")'><i/>";
+                    //sel[12] = "<i class='fa fa-solid fa-circle-plus fa-2x' style='color: #FCB314; cursor: pointer;' onclick='agregarmarca("+tidlcterreno+")'><i/>";
                     
                     for (i = 0; i < select.length; i++) {
                         row = table.insertRow(i);

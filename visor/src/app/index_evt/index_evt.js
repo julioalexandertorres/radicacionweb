@@ -1064,8 +1064,7 @@ function cambiarPestanna(pestannas,pestanna) {
     
 }
 
-function medir() {
-	
+function medir() {	
     if (document.getElementById("medidas").style.display == "block") {
         document.getElementById("medidas").style.display = "none";
         map.removeInteraction(draw);
@@ -1093,9 +1092,6 @@ function medir() {
                 })
             })
         });
-
-
-
 
         var sketch;
         var helpTooltipElement;
@@ -1134,20 +1130,6 @@ function medir() {
         });
 
         var typeSelect = document.getElementById('medidas');
-        //var draw; // global so we can remove it later
-        /*var formatLength = function(line) {
-         var length = ol.Sphere.getLength(line);
-         var output;
-         if (length > 100) {
-         output = (Math.round(length / 1000 * 100) / 100) +
-         ' ' + 'km';
-         } else {
-         output = (Math.round(length * 100) / 100) +
-         ' ' + 'm';
-         }
-         return output;
-         };*/
-
 
         var formatLength = function (line) {
             var length;
@@ -1181,6 +1163,7 @@ function medir() {
         function addInteraction() {
             var radioSelect = $('input[name=gender]:checked', '#medidas').val();
             var type = (radioSelect == 'area' ? 'Polygon' : 'LineString');
+                  
             draw = new ol.interaction.Draw({
                 source: source,
                 type: type,
@@ -1264,7 +1247,6 @@ function medir() {
 
             draw.on('drawend',
                     function () {
-
                         measureTooltipElement.className = 'tooltip tooltip-static';
                         measureTooltip.setOffset([0, -7]);
                         // unset sketch

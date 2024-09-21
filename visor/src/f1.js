@@ -3740,8 +3740,103 @@ function exportexcel(){
     var datauser = validacionusuarios();
     var ceduser = datauser[0][8];
     var enlace = document.createElement('a');
-    enlace.href = 'http://127.0.0.1/radicacionweb/visor/pdfs/certificados_catastrales/certificado_catastral_80124249.pdf';
-    enlace.download = 'certificado_catastral_80124249.pdf';
+    /*enlace.href = 'http://127.0.0.1/radicacionweb/visor/pdfs/certificados_catastrales/certificado_catastral_80124249.pdf';
+    enlace.download = 'certificado_catastral_80124249.pdf';*/
+
+
+
+    const data = {
+      "informacionFisica": {
+          "certificadoNo": "4031-415633-89182-0",
+          "fecha": "21/septiembre/2024",
+          "departamento": "Cundinamarca",
+          "municipio": "Mosquera",
+          "numeroPredial": "00-00-00-0005-0045-0-00-00-0000",
+          "numeroPredialAnterior": "00-00-0005-0045-0000",
+          "direccion": "Santa Isabel",
+          "matricula": "50C-76784",
+          "areaTerreno": "149 m²",
+          "areaConstruida": "4802 m²",
+          "colindanteNorte": "CON LA VIA",
+          "colindanteOriente": "CON EL PREDIO 00-00-00-0005-0311-0-00-00-0000",
+          "colindanteSur": "CON EL PREDIO 00-00-00-0005-0033-0-00-00-0000",
+          "colindanteOccidente": "CON EL PREDIO 00-00-00-0005-0308-0-00-00-0000"
+      },
+      "informacionEconomica": {
+          "avaluo": 4201087000
+      },
+      "informacionJuridica": [
+          {
+              "nombre": "Enrique Acosta Lee",
+              "tipoDocumento": "Cédula de Ciudadanía",
+              "numeroDocumento": "17183794"
+          },
+          {
+              "nombre": "Leonor Acosta Rodríguez",
+              "tipoDocumento": "Cédula de Ciudadanía",
+              "numeroDocumento": "41350815"
+          },
+          {
+              "nombre": "Rafael Acosta Lee",
+              "tipoDocumento": "Cédula de Ciudadanía",
+              "numeroDocumento": "17128338"
+          },
+          {
+              "nombre": "Carlos Eduardo Acosta Lee",
+              "tipoDocumento": "Cédula de Ciudadanía",
+              "numeroDocumento": "3225682"
+          },
+          {
+              "nombre": "Maria Cristina Acosta Velez",
+              "tipoDocumento": "No tiene documento",
+              "numeroDocumento": "0"
+          }
+      ]
+  };
+
+
+  //https://us-central1-risaralda-324519.cloudfunctions.net/certificadocatastral
+  // URL de tu Cloud Function
+  const cloudFunctionUrl = 'https://us-central1-risaralda-324519.cloudfunctions.net/certificadocatastral';
+
+  // Realizar la solicitud POST a la Cloud Function
+  fetch(cloudFunctionUrl, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Error en la generación del PDF');
+      }
+      return response.blob(); // Recibir el PDF como un Blob
+  })
+  .then(blob => {
+      // Crear una URL para el Blob
+      const url = window.URL.createObjectURL(blob);
+
+      // Crear un enlace temporal para descargar el archivo
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'certificado_catastral.pdf'; // Nombre del archivo a descargar
+      document.body.appendChild(a);
+      a.click(); // Simular el clic para descargar el archivo
+
+      // Limpiar la URL y remover el enlace temporal
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+  })
+  .catch(error => {
+      console.error('Error:', error);
+  });
+
+
+
+
+
+
     document.body.appendChild(enlace);
     enlace.click();
     document.body.removeChild(enlace);
