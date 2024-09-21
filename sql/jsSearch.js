@@ -1,5 +1,5 @@
 function search(param, request, request1, request2, request3) {
-    var url = 'http://35.232.57.213:8080/geoserver/ows?';
+    var url = 'https://www.geomonsas.xyz:8443/geoserver/ows?';
     if (request === undefined && request1 === undefined && request2 === undefined && request3 === undefined) {
         var viewParamsStr = viewparamsToStr({});
     }

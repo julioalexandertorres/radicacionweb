@@ -43,9 +43,9 @@
                     //alert(select);
                     //alert(ca[0], fecha);
                     //var payload= '<Transaction xmlns="http://www.opengis.net/wfs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:chia="chia" xmlns:gml="http://www.opengis.net/gml" version="1.1.0" service="WFS" xsi:schemaLocation="http://35.194.38.28:8080/geoserver"><Insert xmlns="http://www.opengis.net/wfs"><wfs:reguser><usuario>'+ca[0]+'</usuario><actividad>'+'ingreso'+'</actividad><fecha>'+fecha+'</fecha></wfs:reguser></Insert></Transaction>';
-                    var payload= '<Transaction xmlns="http://www.opengis.net/wfs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wfsr="wfsr" xmlns:gml="http://www.opengis.net/gml" version="1.1.0" service="WFS" xsi:schemaLocation="http://35.232.57.213:8080/geoserver"><Insert xmlns="http://www.opengis.net/wfs"><wfsr:reguser><usuario>'+ca[0]+'</usuario><actividad>ingreso</actividad><fecha>'+fecha+'</fecha></wfsr:reguser></Insert></Transaction>';
+                    var payload= '<Transaction xmlns="http://www.opengis.net/wfs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wfsr="wfsr" xmlns:gml="http://www.opengis.net/gml" version="1.1.0" service="WFS" xsi:schemaLocation="https://www.geomonsas.xyz:8443/geoserver"><Insert xmlns="http://www.opengis.net/wfs"><wfsr:reguser><usuario>'+ca[0]+'</usuario><actividad>ingreso</actividad><fecha>'+fecha+'</fecha></wfsr:reguser></Insert></Transaction>';
                     $.ajax({
-                            url:'http://35.232.57.213:8080/geoserver/wfs',
+                            url:'https://www.geomonsas.xyz:8443/geoserver/wfs',
                             type: 'POST',
                             dataType: 'xml',
                             processData: false,
