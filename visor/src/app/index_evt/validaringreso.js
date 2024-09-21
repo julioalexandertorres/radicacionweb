@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (select === null || select.length === 0) {
             alert("Contraseña incorrecta");
         } else if (document.getElementById("newpassword").value === document.getElementById("cpassword").value) {
-            var postData = '<Transaction service="WFS" xmlns="http://www.opengis.net/wfs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs http://35.223.81.219:8080/geoserver/schemas/wfs/1.1.0/wfs.xsd">\
+            var postData = '<Transaction service="WFS" xmlns="http://www.opengis.net/wfs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wfs https://www.geomonsas.xyz:8443/geoserver/schemas/wfs/1.1.0/wfs.xsd">\
                 <Update typeName="chia:usuario">\
                     <Property>\
                         <Name>contrasena</Name>\
