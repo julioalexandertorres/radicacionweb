@@ -2618,14 +2618,14 @@ function exportexcel(){
   }
 
   //función que envia al servidor la solicitud de aprobaciones pendientes dependiendo del rol 
-  function datosPendientesaprobacion(){
+ /* function datosPendientesaprobacion(){
     activarLoading();
     //event.preventDefault();
     google.script.run
     .withSuccessHandler( enviarDatospendientesaprobacion ) //función de respuesta del lado del servidor
     .withFailureHandler ( showError ) //función de respuesta de error del lado del servidor
     .obtenerDatospendientesaprobacion(); //función de respuesta del lado del cliente
-  }
+  } */
 
   function datosHistorialderegistro(){
     activarLoading();
@@ -3619,7 +3619,7 @@ function exportexcel(){
         }*/
         console.log(datauser);
         var sqlCompilada = select_query("SELECT lp.*, lt.* FROM valparaiso.lc_interesado li JOIN valparaiso.lc_derecho ld ON li.t_id = ld.interesado_lc_interesado JOIN valparaiso.lc_predio lp ON ld.unidad = lp.t_id JOIN valparaiso.col_uebaunit cu ON lp.t_id = cu.baunit JOIN valparaiso.lc_terreno lt ON cu.ue_lc_terreno = lt.t_id WHERE li.documento_identidad = '"+datauser[0][8]+"'"+"");
-        //console.log(sqlCompilada);
+        console.log(sqlCompilada);
         for(n =0; n < sqlCompilada.length; n++){
           datosTable.push([sqlCompilada[n][8], sqlCompilada[n][26], sqlCompilada[n][28], sqlCompilada[n][7], sqlCompilada[n][21]]);  
         }

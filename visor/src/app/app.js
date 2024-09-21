@@ -4,7 +4,7 @@
 var prediosel = prediosel.split("=");
 var prediosel = prediosel[1];*/
 //alert(prediosel);
-var url = 'http://35.232.57.213:8080/geoserver/ows?';
+var url = 'https://www.geomonsas.xyz:8443/geoserver/ows?';
 var featurePrefix = 'ladm';
 var featureType = ['lc_terreno', 'buenaventura_360'];
 var featureNS = 'http://ladm.com.co';

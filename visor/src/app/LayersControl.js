@@ -140,7 +140,7 @@ var binglabels = new ol.layer.Tile({
 var ortofotovalparaiso = new ol.layer.Tile({
      visible: false,
      source: new ol.source.TileWMS({
-       url: 'http://35.232.57.213:8080/geoserver/ladm/wms',
+       url: 'https://www.geomonsas.xyz:8443/geoserver/ladm/wms',
        params: {LAYERS: 'ladm:ortofoto_valparaiso', STYLES: ''},
         serverType: 'geoserver',
         crossOrigin: 'anonymous'
@@ -346,10 +346,10 @@ function viewlegend(datosc){
     var layer = findBy(map.getLayerGroup(), 'name', datosc);
     var ruta = layer.values_.source.params_.LAYERS;
     if(datosc == 'Mapa01_Cambios_de_Uso1997'){
-     var serv = 'http://35.232.57.213:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=234&HEIGHT=350&LAYER='+ ruta;
+     var serv = 'https://www.geomonsas.xyz:8443/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=234&HEIGHT=350&LAYER='+ ruta;
     }
     else{
-     var serv = 'http://35.232.57.213:8080/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER='+ ruta;
+     var serv = 'https://www.geomonsas.xyz:8443/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER='+ ruta;
     }
     var table = document.getElementById("tblattwms");
     table.innerHTML = "";
